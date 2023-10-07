@@ -8,7 +8,7 @@ import Spinner from "../Spinner/Spinner";
 import MovieService from "../../services/MovieService";
 import { useState, useEffect } from "react";
 
-const SidePanel = ({ movieId }) => {
+const SidePanel = ({ movieId = 968051 }) => {
   const [movieInfo, setMovieInfo] = useState([]);
   const { getMovie } = MovieService();
   const [loading, setLoading] = useState(true);
@@ -18,6 +18,7 @@ const SidePanel = ({ movieId }) => {
       setLoading(false);
     });
     setLoading(true);
+    // eslint-disable-next-line
   }, [movieId]);
   function getGenres(genre) {
     if (typeof genre.genres === "object") {

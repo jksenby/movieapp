@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      rel="icon"
+      href="https://icons.iconarchive.com/icons/marcus-roberto/google-play/512/Google-Play-Movies-icon.png"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -34,6 +37,26 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(window).bind("resize", resizeWindow);
+        function resizeWindow(e) {
+          var newWindowWidth = $(window).width(); // Если ширина меньше 600 px, используется таблица стилей для мобильного
+
+          if (newWindowWidth < 600) {
+            $("link[rel=stylesheet]").attr({ href: "mobile.css" });
+          } else if (newWindowWidth > 600) {
+            // Если ширина больше 600 px, используется таблица стилей для десктопа
+            $("link[rel=stylesheet]").attr({ href: "style.css" });
+          }
+        }
+      });
+    </script>
     <div id="root"></div>
     <!--
       This HTML file is a template.

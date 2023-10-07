@@ -20,6 +20,7 @@ const MovieList = ({ handleChange, handleVideo, search }) => {
       setLoading(false);
     });
     setLoading(true);
+    // eslint-disable-next-line
   }, []);
 
   const onMovieLoaded = (newMovieList) => {
@@ -69,8 +70,12 @@ const MovieList = ({ handleChange, handleVideo, search }) => {
     return <ul style={{ display: "-ms-grid" }}>{items}</ul>;
   }
   const items = renderItems(
-    movieList.filter((item, i) => {
-      if (item.title.toLowerCase().includes(search.toLowerCase())) return item;
+    movieList.filter((item) => {
+      if (item.title.toLowerCase().includes(search.toLowerCase())) {
+        return item;
+      } else {
+        return null;
+      }
     })
   );
   const spinner = loading ? <Spinner /> : null;
