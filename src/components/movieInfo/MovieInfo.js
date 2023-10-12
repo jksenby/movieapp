@@ -8,7 +8,7 @@ import Spinner from "../Spinner/Spinner";
 import MovieService from "../../services/MovieService";
 import { useState, useEffect } from "react";
 
-const SidePanel = ({ movieId = 968051 }) => {
+const MovieInfo = ({ movieId = 968051 }) => {
   const [movieInfo, setMovieInfo] = useState([]);
   const { getMovie } = MovieService();
   const [loading, setLoading] = useState(true);
@@ -74,4 +74,4 @@ const View = ({ movieInfo, getGenres }) => {
   );
 };
 
-export default SidePanel;
+export default MovieInfo;

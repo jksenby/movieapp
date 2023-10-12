@@ -2,8 +2,16 @@
     display: block;
     margin-left: auto;
     margin-right: auto ;
-    background-color: black;
     width: 70%;
     height: 100%;
-    color:aliceblue;
+    color:black;
+}
+
+.btn {
+    background-color: aliceblue;
+    border: 2px solid silver;
+    &__clicked {
+        border: 2px solid red;
+        background-color: red;
+    }
 }

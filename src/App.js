@@ -4,6 +4,7 @@ import Spinner from "./components/Spinner/Spinner";
 
 import { useState, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Favorites from "./components/favorites/favorites";
 const MovieListPage = lazy(() => import("./components/pages/MovieListPage")),
   VideoPlayerPage = lazy(() => import("./components/pages/VideoPlayerPage")),
   SearchBar = lazy(() => import("./components/SearchBar/SearchBar"));
@@ -25,7 +26,7 @@ function App() {
             <Suspense fallback={<Spinner />}>
               <Routes>
                 <Route
-                  path="/"
+                  path="/movieapp"
                   element={
                     <MovieListPage handleVideo={handleVideo} search={search} />
                   }
@@ -34,6 +35,7 @@ function App() {
                   path={`/:${videoId}/videos`}
                   element={<VideoPlayerPage />}
                 />
+                <Route path="/favorites" element={<Favorites />} />
               </Routes>
             </Suspense>
           </main>

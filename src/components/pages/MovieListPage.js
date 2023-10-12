@@ -1,13 +1,13 @@
 import { useState } from "react";
 import MovieList from "../MovieList/MovieList";
-import SidePanel from "../SidePanel/SidePanel";
+import MovieInfo from "../movieInfo/MovieInfo";
 
 const MovieListPage = ({ handleVideo, search }) => {
-  const [sidePanel, setSidePanel] = useState(565770);
-  const handleChange = (sidePanelId) => {
-    setSidePanel(sidePanelId);
+  const [movieId, setMovieId] = useState(565770);
+  const handleChange = (movieId) => {
+    setMovieId(movieId);
   };
-  const sideWindow = sidePanel ? <SidePanel movieId={sidePanel} /> : null;
+  const sideWindow = movieId ? <MovieInfo movieId={movieId} /> : null;
   return (
     <div>
       <MovieList

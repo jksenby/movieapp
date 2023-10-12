@@ -1,0 +1,13 @@
+.favorite_list {
+    background-color: antiquewhite;
+    border: 5px solid silver;
+    margin: 0px;
+    width: 100%;
+}
+.list {
+float: left;
+width: 74%;
+background-color: rgba(192, 192, 192, 0.2);
+border: 1px solid silver;
+border-radius: 8px;
+}
